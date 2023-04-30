@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:maquina_transaccional/views/realizar_transaccion.dart';
+import 'package:maquina_transaccional/views/ver_movimientos.dart';
 
 final buttontyle = ElevatedButton.styleFrom(
       primary: Color.fromRGBO(171,196,170,1.0),
@@ -36,9 +38,9 @@ class consultar_saldo extends StatelessWidget {
                   child: ElevatedButton(
                     style: buttontyle,
                     onPressed: (){
-                      //Navigator.push(context,
-                        //MaterialPageRoute(builder: (context)=> menu_principal())
-                      //);
+                      Navigator.push(context,
+                        MaterialPageRoute(builder: (context)=> realizar_transaccion())
+                      );
                    },
                     child: Center(child: Text("hacer transacción", style: TextStyle(fontSize: 20),))),
                 ),
@@ -48,9 +50,9 @@ class consultar_saldo extends StatelessWidget {
                   child: ElevatedButton(
                     style: buttontyle,
                     onPressed: (){
-                      //Navigator.push(context,
-                        //MaterialPageRoute(builder: (context)=> menu_principal())
-                      //);
+                      Navigator.push(context,
+                        MaterialPageRoute(builder: (context)=> ver_movimientos())
+                      );
                    },
                     child: Text("ver movimientos", style: TextStyle(fontSize: 20),)),
                 ),
