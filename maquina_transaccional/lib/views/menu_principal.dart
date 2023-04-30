@@ -15,28 +15,84 @@ class menu_principal extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromRGBO(243, 222, 186, 1.0),
       appBar: AppBar(
-        title: Text("Menu principal"),
+        centerTitle: true,
+        title: Text("Menú principal"),
         backgroundColor: Color.fromRGBO(103, 93, 80, 1.0),
       ),
       body: Center(
         child: Column(
           children: [
-            cuerpo(),
             const SizedBox(
               width: 10,
-              height: 60,
+              height: 30,
+             ),
+            column_principal(),
+            const SizedBox(
+              width: 10,
+              height: 15,
             ),
-            Container(
-              width: 200,
-              height: 60,
-              child: ElevatedButton(
-                style: buttontyle,
-                onPressed: (){
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context)=> crear_cuenta())
-                  );
-               },
-                child: Text("Iniciar sesión", style: TextStyle(fontSize: 20),)),
+            Column(
+              children: [
+                row_images(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    //Botón consultar saldo 
+                    Container(
+                      width: 180,
+                      height: 40,
+                      child: ElevatedButton(
+                        style: buttontyle,
+                        onPressed: (){
+                          Navigator.push(context,
+                            MaterialPageRoute(builder: (context)=> const crear_cuenta())
+                          );
+                       },
+                        child: const Text("Consultar saldo", style: TextStyle(fontSize: 15))
+                      ),
+                    ),
+                    //Botón ver movimientos
+                    Container(
+                      width: 180,
+                      height: 40,
+                      child: ElevatedButton(
+                        style: buttontyle,
+                        onPressed: (){
+                          Navigator.push(context,
+                            MaterialPageRoute(builder: (context)=> const crear_cuenta())
+                          );
+                       },
+                        child: const Text("Ver movimiento", style: TextStyle(fontSize: 15))
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  width: 10,
+                  height: 30,
+                ),
+                //Botón realizar transacción
+                Container(
+                  width: 100,
+                  height: 100,
+                  child: Image.asset('assets/transferencia.png'),
+                ),
+                Container(
+                      width: 180,
+                      height: 40,
+                      child: ElevatedButton(
+                        style: buttontyle,
+                        onPressed: (){
+                          Navigator.push(context,
+                            MaterialPageRoute(builder: (context)=> const crear_cuenta())
+                          );
+                       },
+                        child: Center(child: const Text("Realizar transacción", style: TextStyle(fontSize: 15)))
+                      ),
+                    ),
+
+              ],
             ),
             const SizedBox(
               height: 40,
@@ -49,4 +105,62 @@ class menu_principal extends StatelessWidget {
   }
 }
 
+Widget column_principal(){
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    mainAxisSize: MainAxisSize.min,
+      children: const [
+        Text("Bienvenido: ", 
+            style: TextStyle(color: Color.fromRGBO(103, 93, 80, 1.0),
+            fontSize: 30,
+            fontWeight: FontWeight.bold
+            )
+        ),
+        SizedBox(
+          width: 10,
+          height: 10,
+        ),
+        Text("*Nombre del usuario*", 
+            style: TextStyle(color: Color.fromRGBO(103, 93, 80, 1.0),
+            fontSize: 24,
+            fontWeight: FontWeight.bold
+            )
+        ),
+        SizedBox(
+          width: 10,
+          height: 25,
+        ),
+        Text("¿En qué le podemos ayudar hoy?", 
+            style: TextStyle(color: Color.fromRGBO(103, 93, 80, 1.0),
+            fontSize: 18,
+            fontWeight: FontWeight.normal
+            )
+        ),
 
+    ],
+  );
+
+}
+
+Widget row_images (){
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    mainAxisSize: MainAxisSize.max,
+    children: [
+      Container(
+        width: 120,
+        height: 120,
+        child: Image.asset('assets/saldo.png'),
+      ),
+      Container(
+        padding: EdgeInsets.all(20.0),
+        width: 120,
+        height: 120,
+        child: Image.asset('assets/ver_transac.png'),
+      )
+      
+    ],
+  );
+
+}

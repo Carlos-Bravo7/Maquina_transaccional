@@ -134,27 +134,3 @@ Widget textfield_contrasena(){
 
 }
 
-Widget texto_correo(){
-  return const Text("Correo electrónico", 
-              style: TextStyle(color: Color.fromRGBO(103, 93, 80, 1.0),
-              fontSize: 18,
-              fontWeight: FontWeight.bold
-              )
-            );
-
-}
-
-Widget textfield_correo(){
-  return Container(
-    width: 250,
-    height: 50,
-    child: const TextField(
-      decoration: InputDecoration(
-        hintText: "Ingrese el correo electrónico",
-        fillColor: Colors.white,
-        filled: true
-      ),
-    ),
-  );
-
-}
