@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maquina_transaccional/views/menu_principal.dart';
 
 final buttontyle = ElevatedButton.styleFrom(
       primary: Color.fromRGBO(171,196,170,1.0),
@@ -31,9 +32,9 @@ class crear_cuenta extends StatelessWidget {
               child: ElevatedButton(
                 style: buttontyle,
                 onPressed: (){
-                  //Navigator.push(context,
-                    //MaterialPageRoute(builder: (context)=> inicio_sesion())
-                  //);
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context)=> menu_principal())
+                  );
                },
                 child: Text("Crear cuenta", style: TextStyle(fontSize: 20),)),
             ),
