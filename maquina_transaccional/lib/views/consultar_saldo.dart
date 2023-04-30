@@ -24,19 +24,37 @@ class consultar_saldo extends StatelessWidget {
             colm_cuerpo(),
             const SizedBox(
               width: 10,
-              height: 40,
+              height: 120,
             ),
-            Container(
-              width: 200,
-              height: 50,
-              child: ElevatedButton(
-                style: buttontyle,
-                onPressed: (){
-                  //Navigator.push(context,
-                    //MaterialPageRoute(builder: (context)=> menu_principal())
-                  //);
-               },
-                child: Text("Crear cuenta", style: TextStyle(fontSize: 20),)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  width: 200,
+                  height: 50,
+                  child: ElevatedButton(
+                    style: buttontyle,
+                    onPressed: (){
+                      //Navigator.push(context,
+                        //MaterialPageRoute(builder: (context)=> menu_principal())
+                      //);
+                   },
+                    child: Center(child: Text("hacer transacción", style: TextStyle(fontSize: 20),))),
+                ),
+                Container(
+                  width: 200,
+                  height: 50,
+                  child: ElevatedButton(
+                    style: buttontyle,
+                    onPressed: (){
+                      //Navigator.push(context,
+                        //MaterialPageRoute(builder: (context)=> menu_principal())
+                      //);
+                   },
+                    child: Text("ver movimientos", style: TextStyle(fontSize: 20),)),
+                ),
+              ],
             ),
             const SizedBox(
               height: 20,
@@ -52,118 +70,21 @@ Widget colm_cuerpo(){
   return Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(
-              width: 10,
-              height: 20,
-            ),
-            const Text("CREAR CUENTA", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25, color: Color.fromRGBO(103, 93, 80, 1.0))
-            ),
-            const SizedBox(
+          children: const [
+            SizedBox(
               width: 10,
               height: 40,
             ),
-            texto_correo(),
-            const SizedBox(
-              width: 10,
-              height: 20,
+            Text("SALDO ACTUAL DE LA CUENTA:", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25, color: Color.fromRGBO(103, 93, 80, 1.0))
             ),
-            textfield_correo(),
-            const SizedBox(
+            SizedBox(
               width: 10,
-              height: 20,
+              height: 100,
             ),
-            texto_usuario(),
-            const SizedBox(
-              width: 10,
-              height: 20,
-            ),
-            textfield_nom_usu(),
-            const SizedBox(
-              width: 10,
-              height: 20,
-            ),
-            texto_contrasena(),
-            const SizedBox(
-              width: 10,
-              height: 20,
-            ),
-            textfield_contrasena()
+            Text("400.000", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 70, color: Color.fromRGBO(103, 93, 80, 1.0)))
+            
           ],
         );
 }
 
-Widget texto_usuario(){
-  return const Text("Nombre de usuario", 
-              style: TextStyle(color: Color.fromRGBO(103, 93, 80, 1.0),
-              fontSize: 18,
-              fontWeight: FontWeight.bold
-              )
-            );
 
-}
-
-Widget textfield_nom_usu(){
-  return Container(
-    width: 250,
-    height: 50,
-    child: const TextField(
-      decoration: InputDecoration(
-        hintText: "Ingrese el usuario",
-        fillColor: Colors.white,
-        filled: true
-      ),
-    ),
-  );
-
-}
-
-Widget texto_contrasena(){
-  return const Text("Contraseña", 
-              style: TextStyle(color: Color.fromRGBO(103, 93, 80, 1.0),
-              fontSize: 18,
-              fontWeight: FontWeight.bold
-              )
-            );
-
-}
-
-Widget textfield_contrasena(){
-  return Container(
-    width: 250,
-    height: 50,
-    child: const TextField(
-      decoration: InputDecoration(
-        hintText: "Ingrese la contraseña",
-        fillColor: Colors.white,
-        filled: true
-      ),
-    ),
-  );
-
-}
-
-Widget texto_correo(){
-  return const Text("Correo electrónico", 
-              style: TextStyle(color: Color.fromRGBO(103, 93, 80, 1.0),
-              fontSize: 18,
-              fontWeight: FontWeight.bold
-              )
-            );
-
-}
-
-Widget textfield_correo(){
-  return Container(
-    width: 250,
-    height: 50,
-    child: const TextField(
-      decoration: InputDecoration(
-        hintText: "Ingrese el correo electrónico",
-        fillColor: Colors.white,
-        filled: true
-      ),
-    ),
-  );
-
-}
