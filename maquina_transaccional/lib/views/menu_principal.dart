@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:maquina_transaccional/views/crear_cuenta.dart';
+import 'package:maquina_transaccional/views/realizar_transaccion.dart';
+import 'package:maquina_transaccional/views/ver_movimientos.dart';
+import 'package:maquina_transaccional/views/consultar_saldo.dart';
 
 final buttontyle = ElevatedButton.styleFrom(
       primary: Color.fromRGBO(171,196,170,1.0),
@@ -46,7 +49,7 @@ class menu_principal extends StatelessWidget {
                         style: buttontyle,
                         onPressed: (){
                           Navigator.push(context,
-                            MaterialPageRoute(builder: (context)=> const crear_cuenta())
+                            MaterialPageRoute(builder: (context)=> const consultar_saldo())
                           );
                        },
                         child: const Text("Consultar saldo", style: TextStyle(fontSize: 15))
@@ -60,7 +63,7 @@ class menu_principal extends StatelessWidget {
                         style: buttontyle,
                         onPressed: (){
                           Navigator.push(context,
-                            MaterialPageRoute(builder: (context)=> const crear_cuenta())
+                            MaterialPageRoute(builder: (context)=> const ver_movimientos())
                           );
                        },
                         child: const Text("Ver movimiento", style: TextStyle(fontSize: 15))
@@ -85,7 +88,7 @@ class menu_principal extends StatelessWidget {
                         style: buttontyle,
                         onPressed: (){
                           Navigator.push(context,
-                            MaterialPageRoute(builder: (context)=> const crear_cuenta())
+                            MaterialPageRoute(builder: (context)=> const realizar_transaccion())
                           );
                        },
                         child: Center(child: const Text("Realizar transacción", style: TextStyle(fontSize: 15)))
