@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class consultar_saldo extends StatelessWidget {
-  const consultar_saldo({super.key});
+class ver_movimientos extends StatelessWidget {
+  const ver_movimientos({super.key});
 
   @override
   Widget build(BuildContext context) {
